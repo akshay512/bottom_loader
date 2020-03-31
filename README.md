@@ -12,7 +12,7 @@ A light weight package to show loader using bottom modal sheet. As it is a state
 
 ## Demo
 
-<img src="" height="35%" width="35%"  alt="Bottom Loader Demo"/> 
+<img src="https://github.com/akshay512/bottom_loader/blob/master/sample/sample.gif" height="35%" width="35%"  alt="Bottom Loader Demo"/> 
 
 
 ## Installation
