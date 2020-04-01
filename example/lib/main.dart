@@ -25,32 +25,46 @@ class _MyHomePageState extends State<MyHomePage> {
   BottomLoader bl;
 
   showMainBottomSheet(BuildContext context) {
-    showModalBottomSheet(context: context, builder: (BuildContext context) {
-      return Container(child: Text('Hello'),);
-    });
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            child: Text('Hello'),
+          );
+        });
   }
 
   @override
   Widget build(BuildContext context) {
-     bl = new BottomLoader(context, showLogs: true,isDismissible: false,);
-            bl.style(message: 'Please wait...',);
+    bl = new BottomLoader(
+      context,
+      showLogs: true,
+      isDismissible: false,
+    );
+    bl.style(
+      message: 'Please wait...',
+    );
     return Scaffold(
-      appBar: AppBar(title: Text('Bottom Loading'),),
-          body: Container(
+      appBar: AppBar(
+        title: Text('Bottom Loading'),
+      ),
+      body: Container(
         child: Center(
           child: RaisedButton(
-            child: Text('Show bottom loader'),
-            onPressed: () {
-           bl.display();
+              child: Text('Show bottom loader'),
+              onPressed: () {
+                bl.display();
 
-           //navigating to next page after 5 seconds
-           Future.delayed(Duration(seconds: 5)).whenComplete((){
-             bl.close();
+                //navigating to next page after 5 seconds
+                Future.delayed(Duration(seconds: 5)).whenComplete(() {
+                  bl.close();
 
-             Navigator.of(context).push(MaterialPageRoute(builder: (context) => Scaffold(body: Center(child: Text('Second Screen')),)));
-           });
-
-          }),
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Scaffold(
+                            body: Center(child: Text('Second Screen')),
+                          )));
+                });
+              }),
         ),
       ),
     );

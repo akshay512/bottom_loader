@@ -26,7 +26,7 @@ class BottomLoader {
   _Body _bottomloader;
 
   BottomLoader(BuildContext context,
-      {bool isDismissible, bool showLogs,Widget loader,ShapeBorder shape}) {
+      {bool isDismissible, bool showLogs, Widget loader, ShapeBorder shape}) {
     _context = context;
     _loadingWidget = loader ?? CircularProgressIndicator();
     _bottomLoadingType = BottomLoadingType.Normal;
