@@ -2,7 +2,8 @@
 
 A light weight package to show loader using bottom modal sheet. As it is a stateful widget, you can change the text shown on the bottom sheet dynamically.
 
-[![Get the library](https://img.shields.io/badge/Get%20library-pub-blue)](https://pub.dev/packages/progress_dialog) &nbsp; [![Example](https://img.shields.io/badge/Example-Ex-success)](https://pub.dev/packages/progress_dialog#-example-tab-)
+[![](https://img.shields.io/badge/dontate-Buy%20Me%20a%20Coffee-blueviolet)](https://www.buymeacoffee.com/5zeFDGT) &nbsp; 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-in-0e76a8)](https://www.linkedin.com/in/akshay-a-s-037109134/) &nbsp; [![Get the library](https://img.shields.io/badge/Get%20library-pub-blue)](https://pub.dev/packages/bottom_loader) &nbsp; [![Example](https://img.shields.io/badge/Example-Ex-success)](https://pub.dev/packages/bottom_loader#-example-tab-)
 
 
 
@@ -12,7 +13,7 @@ A light weight package to show loader using bottom modal sheet. As it is a state
 
 ## Demo
 
-<img src="https://github.com/akshay512/bottom_loader/blob/master/sample/sample.gif" height="35%" width="35%"  alt="Bottom Loader Demo"/> 
+<img src="https://raw.githubusercontent.com/akshay512/bottom_loader/master/example/sample/sample.gif" height="35%" width="35%"  alt="Bottom Loader Demo"/> 
 
 
 ## Installation
@@ -21,7 +22,7 @@ A light weight package to show loader using bottom modal sheet. As it is a state
 Add the Package
 ```yaml
 dependencies:
-  bottom_loader: ^0.0.1
+  bottom_loader: ^0.1.2
 ```
 
 ## How to use
