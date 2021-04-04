@@ -8,7 +8,7 @@ A light weight package to show loader using bottom modal sheet. As it is a state
 
 
 ## Supported Dart Versions
-**Dart SDK version >= 2.1.0**
+**Dart SDK version >= 2.12.0**
 
 
 ## Demo
@@ -17,12 +17,12 @@ A light weight package to show loader using bottom modal sheet. As it is a state
 
 
 ## Installation
-[![Pub](https://img.shields.io/badge/pub-1.2.0-blue)](https://pub.dev/packages/bottom_loader)
+[![Pub](https://img.shields.io/badge/pub-2.0.3-blue)](https://pub.dev/packages/bottom_loader)
 
 Add the Package
 ```yaml
 dependencies:
-  bottom_loader: ^0.1.2
+  bottom_loader: ^0.2.0
 ```
 
 ## How to use
