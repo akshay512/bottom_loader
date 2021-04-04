@@ -13,7 +13,12 @@ A light weight package to show loader using bottom modal sheet. As it is a state
 
 ## Demo
 
-<img src="https://raw.githubusercontent.com/akshay512/bottom_loader/master/example/sample/sample.gif" height="35%" width="35%"  alt="Bottom Loader Demo"/> 
+<iframe height="644" style="width: 100%;" scrolling="no" title="ExZmJam" src="https://codepen.io/akshay512/embed/ExZmJam?height=644&theme-id=dark&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/akshay512/pen/ExZmJam'>ExZmJam</a> by Akshay A S
+  (<a href='https://codepen.io/akshay512'>@akshay512</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+<!-- <img src="https://raw.githubusercontent.com/akshay512/bottom_loader/master/example/sample/sample.gif" height="35%" width="35%"  alt="Bottom Loader Demo"/>  -->
 
 
 ## Installation

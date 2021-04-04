@@ -3,14 +3,11 @@ library bottom_loader;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-enum BottomLoadingType { Normal, Download }
-
 String _loadingMessage = "Loading...";
 double _progress = 0.0, _maxProgress = 100.0;
 
 bool _isShowing = false;
-BuildContext _context, _dismissingContext;
-BottomLoadingType _bottomLoadingType;
+late BuildContext _context, _dismissingContext;
 bool _barrierDismissible = true, _showLogs = false;
 
 TextStyle _progressTextStyle = TextStyle(
@@ -20,39 +17,37 @@ TextStyle _progressTextStyle = TextStyle(
 
 Color _backgroundColor = Colors.white;
 Widget _loadingWidget = CircularProgressIndicator();
-ShapeBorder _shapeBorder;
+ShapeBorder? _shapeBorder;
 
 class BottomLoader {
-  _Body _bottomloader;
+  _Body? _bottomloader;
 
   BottomLoader(BuildContext context,
-      {bool isDismissible, bool showLogs, Widget loader, ShapeBorder shape}) {
+      {bool? isDismissible,
+      bool? showLogs,
+      Widget? loader,
+      ShapeBorder? shape}) {
     _context = context;
     _loadingWidget = loader ?? CircularProgressIndicator();
-    _bottomLoadingType = BottomLoadingType.Normal;
     _barrierDismissible = isDismissible ?? true;
     _showLogs = showLogs ?? false;
     _shapeBorder = shape ?? RoundedRectangleBorder();
   }
 
   void style(
-      {double progress,
-      double maxProgress,
-      String message,
-      Widget progressWidget,
-      Color backgroundColor,
-      TextStyle progressTextStyle,
-      TextStyle messageTextStyle,
-      double elevation,
+      {double? progress,
+      double? maxProgress,
+      String? message,
+      Widget? progressWidget,
+      Color? backgroundColor,
+      TextStyle? progressTextStyle,
+      TextStyle? messageTextStyle,
+      double? elevation,
       // double borderRadius,
-      Curve insetAnimCurve}) {
+      Curve? insetAnimCurve}) {
     if (_isShowing) return;
-    if (_bottomLoadingType == BottomLoadingType.Download) {
-      _progress = progress ?? _progress;
-    }
 
     _loadingMessage = message ?? _loadingMessage;
-    _maxProgress = maxProgress ?? _maxProgress;
     _loadingWidget = progressWidget ?? _loadingWidget;
     _backgroundColor = backgroundColor ?? _backgroundColor;
     _messageStyle = messageTextStyle ?? _messageStyle;
@@ -60,23 +55,19 @@ class BottomLoader {
   }
 
   void update(
-      {double progress,
-      double maxProgress,
-      String message,
-      Widget progressWidget,
-      TextStyle progressTextStyle,
-      TextStyle messageTextStyle}) {
-    if (_bottomLoadingType == BottomLoadingType.Download) {
-      _progress = progress ?? _progress;
-    }
-
+      {double? progress,
+      double? maxProgress,
+      String? message,
+      Widget? progressWidget,
+      TextStyle? progressTextStyle,
+      TextStyle? messageTextStyle}) {
     _loadingMessage = message ?? _loadingMessage;
     _maxProgress = maxProgress ?? _maxProgress;
     _loadingWidget = progressWidget ?? _loadingWidget;
     _messageStyle = messageTextStyle ?? _messageStyle;
     _progressTextStyle = progressTextStyle ?? _progressTextStyle;
 
-    if (_isShowing) _bottomloader.update();
+    if (_isShowing) _bottomloader!.update();
   }
 
   bool isShowing() {
@@ -148,7 +139,6 @@ class BottomLoader {
   }
 }
 
-// ignore: must_be_immutable
 class _Body extends StatefulWidget {
   _BodyState _bottomloading = _BodyState();
 
@@ -187,24 +177,8 @@ class _BodyState extends State<_Body> {
         ),
         const SizedBox(width: 15.0),
         Expanded(
-          child: _bottomLoadingType == BottomLoadingType.Normal
-              ? Text(_loadingMessage,
-                  textAlign: TextAlign.justify, style: _messageStyle)
-              : Stack(
-                  children: <Widget>[
-                    Positioned(
-                      child: Text(_loadingMessage, style: _messageStyle),
-                      top: 30.0,
-                    ),
-                    Positioned(
-                      child: Text("$_progress/$_maxProgress",
-                          style: _progressTextStyle),
-                      bottom: 10.0,
-                      right: 10.0,
-                    ),
-                  ],
-                ),
-        ),
+            child: Text(_loadingMessage,
+                textAlign: TextAlign.justify, style: _messageStyle)),
         const SizedBox(width: 10.0)
       ]),
     );

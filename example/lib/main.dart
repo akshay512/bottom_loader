@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bottom_loader/bottom_loader.dart';
 import 'package:flutter/material.dart';
 
@@ -14,25 +16,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key}) : super(key: key);
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePage extends StatelessWidget {
   BottomLoader bl;
-
-  showMainBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-        context: context,
-        builder: (BuildContext context) {
-          return Container(
-            child: Text('Hello'),
-          );
-        });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,11 +31,11 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bottom Loading'),
+        title: Text('Bottom Loader'),
       ),
       body: Container(
         child: Center(
-          child: RaisedButton(
+          child: ElevatedButton(
               child: Text('Show bottom loader'),
               onPressed: () {
                 bl.display();
@@ -59,14 +44,28 @@ class _MyHomePageState extends State<MyHomePage> {
                 Future.delayed(Duration(seconds: 5)).whenComplete(() {
                   bl.close();
 
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => Scaffold(
-                            body: Center(child: Text('Second Screen')),
-                          )));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => SecondScreen()));
                 });
               }),
         ),
       ),
+    );
+  }
+}
+
+class SecondScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Bottom Loader Sample'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+      ),
+      body: Center(child: Text('Second Screen')),
     );
   }
 }
