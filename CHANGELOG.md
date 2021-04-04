@@ -1,3 +1,9 @@
+## 0.2.1
+
+* null safety
+* new sample
+* documentation changes
+
 ## 0.2.0
 
 * null safety

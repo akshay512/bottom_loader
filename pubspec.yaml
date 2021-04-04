@@ -1,6 +1,6 @@
 name: bottom_loader
 description: A flutter plugin to display bottom loader.
-version: 0.2.0
+version: 0.2.1
 homepage: https://github.com/akshay512/bottom_loader
 
 environment:
