@@ -3,7 +3,7 @@
 A light weight package to show loader using bottom modal sheet. As it is a stateful widget, you can change the text shown on the bottom sheet dynamically.
 
 [![](https://img.shields.io/badge/dontate-Buy%20Me%20a%20Coffee-blueviolet)](https://www.buymeacoffee.com/5zeFDGT) &nbsp; 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-in-0e76a8)](https://www.linkedin.com/in/akshay-a-s-037109134/) &nbsp; [![Get the library](https://img.shields.io/badge/Get%20library-pub-blue)](https://pub.dev/packages/bottom_loader) &nbsp; [![Example](https://img.shields.io/badge/Example-Ex-success)](https://pub.dev/packages/bottom_loader#-example-tab-)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-in-0e76a8)](https://www.linkedin.com/in/akshay-a-s-037109134/) &nbsp; [![Get the library](https://img.shields.io/badge/Get%20library-pub-blue)](https://pub.dev/packages/bottom_loader) &nbsp; [![Example](https://img.shields.io/badge/Example-Ex-success)](https://pub.dev/packages/bottom_loader/example)
 
 
 
@@ -50,7 +50,7 @@ bl = new BottomLoader(context);
 </li>
 
 
-<li> By default it will show a bottom loader with loader as CircularProgressIndicator but you can specify<b>custom loader widget</b>  and specify if you want your bottom loader to dismiss when back button is pressed <b>isDismissible</b> parameter (Optional) <br/>
+<li> By default it will show a bottom loader with loader as CircularProgressIndicator but you can specify a <b>custom loader widget</b>  and specify if you want your bottom loader to dismiss when back button is pressed <b>isDismissible</b> parameter (Optional) <br/>
 
 ```dart
 //For bottom loader

@@ -8,7 +8,7 @@ double _progress = 0.0, _maxProgress = 100.0;
 
 bool _isShowing = false;
 late BuildContext _context, _dismissingContext;
-bool _barrierDismissible = true, _showLogs = false;
+bool _barrierDismissible = false, _showLogs = false;
 
 TextStyle _progressTextStyle = TextStyle(
         color: Colors.black, fontSize: 13.0, fontWeight: FontWeight.w400),
@@ -112,7 +112,8 @@ class BottomLoader {
         _bottomloader = new _Body();
         showModalBottomSheet<dynamic>(
           context: _context,
-          isDismissible: false,
+          isDismissible: _barrierDismissible,
+          enableDrag: _barrierDismissible,
           isScrollControlled: true,
           shape: _shapeBorder,
           builder: (BuildContext context) {

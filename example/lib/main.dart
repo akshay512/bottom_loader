@@ -21,14 +21,6 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bl = new BottomLoader(
-      context,
-      showLogs: true,
-      isDismissible: false,
-    );
-    bl.style(
-      message: 'Please wait...',
-    );
     return Scaffold(
       appBar: AppBar(
         title: Text('Bottom Loader'),
@@ -38,6 +30,15 @@ class MyHomePage extends StatelessWidget {
           child: ElevatedButton(
               child: Text('Show bottom loader'),
               onPressed: () {
+                bl = new BottomLoader(
+                  context,
+                  showLogs: true,
+                  isDismissible: true,
+                );
+                bl.style(
+                  message: 'Please wait...',
+                );
+
                 bl.display();
 
                 //navigating to next page after 5 seconds

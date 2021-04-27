@@ -1,3 +1,8 @@
+## 0.2.2
+
+* null safety
+* bottom loader dismissing error fix
+
 ## 0.2.1
 
 * null safety
