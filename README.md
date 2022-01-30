@@ -22,7 +22,7 @@ A light weight package to show loader using bottom modal sheet. As it is a state
 Add the Package
 ```yaml
 dependencies:
-  bottom_loader: ^0.2.1
+  bottom_loader: ^0.2.2
 ```
 
 ## How to use
